@@ -1,2 +1,2 @@
-# VampPlugins
-Vamp Plugins Collection
+# Vibrationis
+Vibrationis

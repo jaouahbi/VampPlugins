@@ -1,0 +1,13 @@
+vamp:miredu-vamp:rms::Low Level
+vamp:miredu-vamp:zerocrossingrate::Low Level
+vamp:miredu-vamp:spectralcentroid::Low Level
+vamp:miredu-vamp:spectralspread::Low Level
+vamp:miredu-vamp:spectralskewness::Low Level
+vamp:miredu-vamp:spectralkurtosis::Low Level
+vamp:miredu-vamp:spectralrolloff::Low Level
+vamp:miredu-vamp:spectralflatness::Low Level
+vamp:miredu-vamp:spectralcrest::Low Level
+vamp:miredu-vamp:spectralflux::Low Level
+vamp:miredu-vamp:temporalcentroid::Low Level
+vamp:miredu-vamp:logattacktime::Low Level
+vamp:miredu-vamp:attackstartendtimes::Low Level
