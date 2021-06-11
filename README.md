@@ -1,0 +1,2 @@
+# VampPlugins
+Vamp Plugins Collection
