@@ -1,0 +1,6 @@
+vamp:example-vamp:zerocrossing::Low Level Features
+vamp:example-vamp:spectralcentroid::Low Level Features
+vamp:example-vamp:powerspectrum::Visualisation
+vamp:example-vamp:percussiononsets::Time > Onsets
+vamp:example-vamp:amplitudefollower::Low Level Features
+vamp:example-vamp:fixedtempo::Time > Tempo

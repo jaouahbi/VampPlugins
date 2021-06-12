@@ -24,7 +24,7 @@
 #include "segment.h"
 #include "cluster_melt.h"
 #include "hmm.h"
-#include "pca.h"
+#include "qm_pca.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,0 +1,3 @@
+2007-11  Dan Stowell
+    * Significant refactoring from v0.1, which was a set of SuperCollider UGens.
+    * VERSION: 0.2.0
