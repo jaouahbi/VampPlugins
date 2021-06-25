@@ -19,7 +19,7 @@
 
 #include "QMMFCC.h"
 #include "QMFFT.h"
-#include "Window.h"
+#include "QMWindow.h"
 
 MFCC::MFCC(MFCCConfig config)
 {
@@ -148,7 +148,7 @@ MFCC::MFCC(MFCCConfig config)
     }
    
     /* The analysis window */
-    window      = new Window<double>(config.window, fftSize);
+    window      = new QMWindow<double>(config.window, fftSize);
 
     /* Allocate memory for the FFT */
     realOut     = (double*)calloc(fftSize, sizeof(double));

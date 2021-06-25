@@ -17,7 +17,7 @@
 #define CHROMAGRAM_H
 
 #include "QMFFT.h"
-#include "Window.h"
+#include "QMWindow.h"
 #include "ConstantQ.h"
 
 struct ChromaConfig{
@@ -52,7 +52,7 @@ private:
     int initialise( ChromaConfig Config );
     int deInitialise();
 
-    Window<double> *m_window;
+    QMWindow<double> *m_window;
     double *m_windowbuf;
 	
     double* m_chromadata;

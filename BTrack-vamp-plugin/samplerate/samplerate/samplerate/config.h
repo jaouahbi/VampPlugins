@@ -31,7 +31,7 @@
 #define HAVE_ALSA 0
 
 /* Set to 1 if you have libfftw3. */
-#define HAVE_FFTW3 0
+#define HAVE_FFTW3 1
 
 /* Define if you have C99's lrint function. */
 #define HAVE_LRINT 1

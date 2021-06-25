@@ -71,7 +71,7 @@ void DetectionFunction::initialise( DFConfig Config )
     m_magnitude = new double[ m_halfLength ];
     m_thetaAngle = new double[ m_halfLength ];
 
-    m_window = new Window<double>(HanningWindow, m_dataLength);
+    m_window = new QMWindow<double>(HanningWindow, m_dataLength);
 }
 
 void DetectionFunction::deInitialise()

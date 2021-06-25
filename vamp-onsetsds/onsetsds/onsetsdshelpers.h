@@ -35,8 +35,8 @@
 extern "C" {
 #endif
 
-#include <fftw3.h>
-#include "../onsetsds.h"
+#include "fftw3.h"
+#include "onsetsds.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -20,7 +20,7 @@
 #include <vector>
 
 #include "dsp/transforms/QMFFT.h"
-#include "base/Window.h"
+#include "base/QMWindow.h"
 
 #include "thread/Thread.h"
 #include "thread/AsynchronousTask.h"
@@ -190,7 +190,7 @@ protected:
         }
 
     private:
-        Window<double> m_window;
+        QMWindow<double> m_window;
         FFTReal *m_fft;
         const float *m_in;
         double *m_rin;

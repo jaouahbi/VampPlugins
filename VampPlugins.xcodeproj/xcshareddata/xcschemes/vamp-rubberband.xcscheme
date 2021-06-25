@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D98B83C26755489003A9816"
-               BuildableName = "marsyas-vamp.dylib"
-               BlueprintName = "marsyas-vamp"
+               BlueprintIdentifier = "7D6A11CB26863DB200722F4D"
+               BuildableName = "vamp-rubberband.dylib"
+               BlueprintName = "vamp-rubberband"
                ReferencedContainer = "container:VampPlugins.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D98B83C26755489003A9816"
-            BuildableName = "marsyas-vamp.dylib"
-            BlueprintName = "marsyas-vamp"
+            BlueprintIdentifier = "7D6A11CB26863DB200722F4D"
+            BuildableName = "vamp-rubberband.dylib"
+            BlueprintName = "vamp-rubberband"
             ReferencedContainer = "container:VampPlugins.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

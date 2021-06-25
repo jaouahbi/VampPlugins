@@ -130,7 +130,7 @@ double* Chromagram::process( const double *data )
     }
 
     if (!m_window) {
-        m_window = new Window<double>(HammingWindow, m_frameSize);
+        m_window = new QMWindow<double>(HammingWindow, m_frameSize);
         m_windowbuf = new double[m_frameSize];
     }
 

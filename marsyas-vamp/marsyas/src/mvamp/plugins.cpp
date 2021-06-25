@@ -34,8 +34,8 @@
     authorization.
 */
 
-#include "../../../../vamp/vamp-sdk/vamp-sdk.h"
-#include "../../../../vamp/vamp-sdk/PluginAdapter.h"
+#include <vamp-sdk/vamp-sdk.h>
+#include <vamp-sdk/PluginAdapter.h>
 
 #include "ZeroCrossing.h"
 #include "MarsyasBExtractZeroCrossings.h"

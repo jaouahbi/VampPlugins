@@ -158,7 +158,7 @@ void ClusterMeltSegmenter::extractFeaturesConstQ(const double* samples, int nsam
 
     if (!window || window->getSize() != fftsize) {
         delete window;
-        window = new Window<double>(HammingWindow, fftsize);
+        window = new QMWindow<double>(HammingWindow, fftsize);
     }
 
     vector<double> cq(ncoeff);

@@ -19,7 +19,7 @@
 #include "MathUtilities.h"
 #include "MathAliases.h"
 #include "PhaseVocoder.h"
-#include "Window.h"
+#include "QMWindow.h"
 
 #define DF_HFC (1)
 #define DF_SPECDIFF (2)
@@ -78,7 +78,7 @@ private:
     double* m_magnitude; // Magnitude of analysis frame ( frequency domain )
     double* m_thetaAngle;// Phase of analysis frame ( frequency domain )
 
-    Window<double> *m_window;
+    QMWindow<double> *m_window;
     PhaseVocoder* m_phaseVoc;	// Phase Vocoder
 };
 

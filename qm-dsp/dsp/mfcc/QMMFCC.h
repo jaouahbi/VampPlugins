@@ -16,7 +16,7 @@
 #ifndef MFCC_H
 #define MFCC_H
 
-#include "Window.h"
+#include "QMWindow.h"
 
 class FFTReal;
 
@@ -80,7 +80,7 @@ private:
     double  **mfccFilterWeights;
     
     /* The analysis window */
-    Window<double> *window;
+    QMWindow<double> *window;
     
     /* For the FFT */
     double *realOut;

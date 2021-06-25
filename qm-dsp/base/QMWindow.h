@@ -30,22 +30,22 @@ enum WindowType {
 };
 
 template <typename T>
-class Window
+class QMWindow
 {
 public:
     /**
      * Construct a windower of the given type.
      */
-    Window(WindowType type, size_t size) : m_type(type), m_size(size) { encache(); }
-    Window(const Window &w) : m_type(w.m_type), m_size(w.m_size) { encache(); }
-    Window &operator=(const Window &w) {
+    QMWindow(WindowType type, size_t size) : m_type(type), m_size(size) { encache(); }
+    QMWindow(const QMWindow &w) : m_type(w.m_type), m_size(w.m_size) { encache(); }
+    QMWindow &operator=(const QMWindow &w) {
 	if (&w == this) return *this;
 	m_type = w.m_type;
 	m_size = w.m_size;
 	encache();
 	return *this;
     }
-    virtual ~Window() { delete[] m_cache; }
+    virtual ~QMWindow() { delete[] m_cache; }
     
     void cut(T *src) const { cut(src, src); }
     void cut(const T *src, T *dst) const {
@@ -64,7 +64,7 @@ protected:
 };
 
 template <typename T>
-void Window<T>::encache()
+void QMWindow<T>::encache()
 {
     size_t n = m_size;
     T *mult = new T[n];

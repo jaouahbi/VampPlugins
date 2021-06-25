@@ -18,7 +18,7 @@
 #include "segment.h"
 #include "Segmenter.h"
 #include "hmm.h"
-#include "Window.h"
+#include "QMWindow.h"
 
 using std::vector;
 
@@ -76,7 +76,7 @@ protected:
     void extractFeaturesConstQ(const double *, int);
     void extractFeaturesMFCC(const double *, int);
 
-    Window<double> *window;
+    QMWindow<double> *window;
     FFTReal *fft;
     ConstantQ* constq; 
     MFCC* mfcc;

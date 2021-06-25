@@ -38,7 +38,7 @@
 #define _ZERO_CROSSING_PLUGIN_H_
 
 #include <cstdio>
-#include "../../../../vamp/vamp-sdk/Plugin.h"
+#include <vamp-sdk/Plugin.h>
 #include <marsyas/Collection.h>
 #include <marsyas/system/MarSystemManager.h>
 //#include <vector>

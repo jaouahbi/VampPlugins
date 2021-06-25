@@ -20,8 +20,8 @@
 #include "onsetsdshelpers.h"
 
 #include <stdlib.h>
-#include <sndfile.h>
-#include <fftw3.h>
+#include "sndfile.h"
+#include "fftw3.h"
 
 void onsetsds_init_audiodata(OnsetsDSAudioBuf *odsbuf, OnsetsDS *ods, /* size_t framesize, */ size_t hopsize){
 	
