@@ -74,6 +74,7 @@ protected:
     size_t m_blockSize;
     Vamp::RealTime m_delay;
     Vamp::RealTime m_lastBeat;
+    Vamp::RealTime m_lastTS;
 };
 
 

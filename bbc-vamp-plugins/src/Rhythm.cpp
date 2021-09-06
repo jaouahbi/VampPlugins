@@ -42,8 +42,8 @@ Rhythm::Rhythm(float inputSampleRate)
   threshold = 1;
   average_window = 200;
   peak_window = 6;
-  max_bpm = 300;
-  min_bpm = 12;
+  max_bpm = 140;
+  min_bpm = 100;
 }
 
 Rhythm::~Rhythm() {
@@ -153,7 +153,7 @@ Rhythm::ParameterList Rhythm::getParameterDescriptors() const {
   min_bpmParam.unit = "bpm";
   min_bpmParam.minValue = 5;
   min_bpmParam.maxValue = 300;
-  min_bpmParam.defaultValue = 12;
+  min_bpmParam.defaultValue = 100;
   min_bpmParam.isQuantized = true;
   min_bpmParam.quantizeStep = 1.0;
   list.push_back(min_bpmParam);
@@ -163,9 +163,9 @@ Rhythm::ParameterList Rhythm::getParameterDescriptors() const {
   max_bpmParam.name = "Maximum BPM";
   max_bpmParam.description = "Maximum BPM calculated for autocorrelation.";
   max_bpmParam.unit = "bpm";
-  max_bpmParam.minValue = 50;
-  max_bpmParam.maxValue = 400;
-  max_bpmParam.defaultValue = 300;
+  max_bpmParam.minValue = 100;
+  max_bpmParam.maxValue = 140;
+  max_bpmParam.defaultValue = 120;
   max_bpmParam.isQuantized = true;
   max_bpmParam.quantizeStep = 1.0;
   list.push_back(max_bpmParam);
@@ -385,6 +385,10 @@ Rhythm::FeatureSet Rhythm::process(const float * const *inputBuffers,
   float total = 0;
   int currentBand = 0;
   vector<float> bandTotal;
+    
+    m_lastTS = timestamp;
+    
+//  printf("Rhythm process %s.\n", timestamp.toString().c_str());
 
   // set band totals to zero
   for (int i = 0; i < numBands; i++)
@@ -549,8 +553,13 @@ Rhythm::FeatureSet Rhythm::getRemainingFeatures() {
       meanCorrelationPeak / meanCorrelationValley);
   output[8].push_back(f_peakValleyRatio);
 
+
+    
   // find tempo from peaks
   float tempo = findTempo(autocorPeaks);
+//  printf("(%s) Find tempo from peaks (%f)\n",
+//         m_lastTS.toString().c_str(),
+//         tempo);
   Feature f_tempo;
   f_tempo.hasTimestamp = true;
   f_tempo.timestamp = Vamp::RealTime::fromSeconds(0.0);

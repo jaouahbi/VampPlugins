@@ -460,7 +460,8 @@ int main(int argc, char **argv)
 
     float *fbuf = new float[channels * ibs];
     float **ibuf = new float *[channels];
-    for (size_t i = 0; i < channels; ++i) ibuf[i] = new float[ibs];
+    for (size_t i = 0; i < channels; ++i)
+        ibuf[i] = new float[ibs];
 
     int frame = 0;
     int percent = 0;

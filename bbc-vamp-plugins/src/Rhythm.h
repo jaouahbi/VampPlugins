@@ -220,6 +220,8 @@ class Rhythm : public Vamp::Plugin {
   int peak_window;      /*!< Length of peak-picking window */
   int max_bpm;          /*!< Maximum BPM detected in autocorrelation */
   int min_bpm;          /*!< Minimum BPM detected in autocorrelation */
+    
+    Vamp::RealTime  m_lastTS;
 };
 
 #endif

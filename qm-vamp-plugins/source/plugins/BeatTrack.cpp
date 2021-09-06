@@ -308,6 +308,9 @@ BeatTracker::process(const float *const *inputBuffers,
         return FeatureSet();
     }
     
+    m_timestamp = timestamp;
+//    printf("Tempo tracker timestamp (%s).\n", timestamp.toString().c_str());
+    
     size_t len = m_d->dfConfig.frameLength / 2;
     
     double *magnitudes = new double[len];
@@ -405,6 +408,7 @@ BeatTracker::beatTrackOld()
                 bpm = (60.0 * m_inputSampleRate) / frameIncrement;
                 bpm = int(bpm * 100.0 + 0.5) / 100.0;
                 sprintf(label, "%.2f bpm", bpm);
+                feature.values.push_back(bpm);
                 feature.label = label;
             }
         }
@@ -427,6 +431,11 @@ BeatTracker::beatTrackOld()
             (frame, lrintf(m_inputSampleRate));
             feature.values.push_back(tempi[i]);
             sprintf(label, "%.2f bpm", tempi[i]);
+//            printf("(%s) Beat track old bpm (%f).\n",
+//                   m_timestamp.toString().c_str(),
+//                   tempi[i]);
+            
+            feature.values.push_back(tempi[i]);
             feature.label = label;
             returnFeatures[2].push_back(feature); // tempo is output 2
             prevTempo = tempi[i];
@@ -493,6 +502,7 @@ BeatTracker::beatTrackNew()
                 bpm = (60.0 * m_inputSampleRate) / frameIncrement;
                 bpm = int(bpm * 100.0 + 0.5) / 100.0;
                 sprintf(label, "%.2f bpm", bpm);
+                feature.values.push_back(bpm);
                 feature.label = label;
             }
         }
@@ -513,6 +523,12 @@ BeatTracker::beatTrackNew()
             (frame, lrintf(m_inputSampleRate));
             feature.values.push_back(tempi[i]);
             sprintf(label, "%.2f bpm", tempi[i]);
+            
+//            printf("(%s) Beat track new bpm (%f).\n",
+//                   m_timestamp.toString().c_str(),
+//                   tempi[i]);
+            
+            feature.values.push_back(tempi[i]);
             feature.label = label;
             returnFeatures[2].push_back(feature); // tempo is output 2
             prevTempo = tempi[i];

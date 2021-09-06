@@ -57,6 +57,7 @@ protected:
     int m_dfType;
     bool m_whiten;
     static float m_stepSecs;
+    Vamp::RealTime m_timestamp;
     FeatureSet beatTrackOld();
     FeatureSet beatTrackNew();
 };

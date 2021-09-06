@@ -514,7 +514,7 @@ PluginAdapterBase::Impl::vampGetPreferredStepSize(VampPluginHandle handle)
     cerr << "PluginAdapterBase::Impl::vampGetPreferredStepSize(" << handle << ")" << endl;
 #endif
 
-    return ((Plugin *)handle)->getPreferredStepSize();
+    return (unsigned int)((Plugin *)handle)->getPreferredStepSize();
 }
 
 unsigned int
@@ -524,7 +524,7 @@ PluginAdapterBase::Impl::vampGetPreferredBlockSize(VampPluginHandle handle)
     cerr << "PluginAdapterBase::Impl::vampGetPreferredBlockSize(" << handle << ")" << endl;
 #endif
 
-    return ((Plugin *)handle)->getPreferredBlockSize();
+    return (unsigned int)((Plugin *)handle)->getPreferredBlockSize();
 }
 
 unsigned int
@@ -534,7 +534,7 @@ PluginAdapterBase::Impl::vampGetMinChannelCount(VampPluginHandle handle)
     cerr << "PluginAdapterBase::Impl::vampGetMinChannelCount(" << handle << ")" << endl;
 #endif
 
-    return ((Plugin *)handle)->getMinChannelCount();
+    return (unsigned int)((Plugin *)handle)->getMinChannelCount();
 }
 
 unsigned int
@@ -544,7 +544,7 @@ PluginAdapterBase::Impl::vampGetMaxChannelCount(VampPluginHandle handle)
     cerr << "PluginAdapterBase::Impl::vampGetMaxChannelCount(" << handle << ")" << endl;
 #endif
 
-    return ((Plugin *)handle)->getMaxChannelCount();
+    return (unsigned int)((Plugin *)handle)->getMaxChannelCount();
 }
 
 unsigned int

@@ -36,9 +36,9 @@ Tempo::Tempo(float inputSampleRate) :
     m_ibuf(0),
     m_beat(0),
     m_bpm(0),
-    m_onsettype(OnsetComplex),
+    m_onsettype(OnsetSpecFlux),
     m_tempo(0),
-    m_threshold(0.3),
+    m_threshold(0.01),
     m_silence(-70)
 {
 }
@@ -253,6 +253,9 @@ Tempo::getOutputDescriptors() const
 Tempo::FeatureSet
 Tempo::process(const float *const *inputBuffers, Vamp::RealTime timestamp)
 {
+    
+    m_lastTS = timestamp;
+    
     for (size_t i = 0; i < m_stepSize; ++i) {
         fvec_set_sample(m_ibuf, inputBuffers[0][i], i);
     }
@@ -262,7 +265,7 @@ Tempo::process(const float *const *inputBuffers, Vamp::RealTime timestamp)
     bool istactus = m_beat->data[0];
 
     m_bpm = aubio_tempo_get_bpm(m_tempo);
-
+    
     FeatureSet returnFeatures;
 
     if (istactus == true) {
@@ -280,6 +283,7 @@ Tempo::process(const float *const *inputBuffers, Vamp::RealTime timestamp)
         Feature tempo;
         tempo.hasTimestamp = false;
         tempo.values.push_back(m_bpm);
+//        printf("(%s) Tempo %f bpm\n", m_lastTS.toString().c_str(), m_bpm);
         returnFeatures[1].push_back(tempo);
     }
 

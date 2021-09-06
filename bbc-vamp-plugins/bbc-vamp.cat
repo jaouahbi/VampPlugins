@@ -1,6 +1,6 @@
 vamp:bbc-vamp:bbc-energy::Low Level Features
 vamp:bbc-vamp:bbc-intensity::Low Level Features
-vamp:bbc-vamp:bbc-rhythm::Low Level Features
+vamp:bbc-vamp:bbc-rhythm::Time > Tempo
 vamp:bbc-vamp:bbc-spectral-contrast::Low Level Features
 vamp:bbc-vamp:bbc-spectral-flux::Low Level Features
 vamp:bbc-vamp:bbc-speechmusic-segmenter::Classification
